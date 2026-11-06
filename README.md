@@ -4,6 +4,20 @@ Herramientas en Python para **leer, editar, generar y simular** archivos `.dwm` 
 
 Solo usa la biblioteca estándar de Python 3.8 o superior. No hace falta instalar nada.
 
+## Usar la skill con Claude (la forma más fácil)
+
+La skill `digital-works-dwm` le enseña a Claude a usar este kit: leer la spec, editar sin romper el archivo, simular con retardos y verificar antes de entregar. El .zip ya trae el kit completo adentro, así que no hace falta GitHub.
+
+**En claude.ai (web, escritorio o móvil):**
+1. Descarga **[digital-works-dwm.zip](https://github.com/Vix0061/DWM-kit/raw/main/dist/digital-works-dwm.zip)**. No lo descomprimas.
+2. Ve a **Personalizar → Skills** (`claude.ai/customize/skills`).
+3. Toca **+ → Create skill → Upload a skill** y sube el .zip.
+4. Verifica que la skill quede activada. Listo: pídele a Claude cualquier cosa con un `.dwm` y la usará sola.
+
+**En Claude Code:** clona este repo y trabaja dentro de la carpeta. La skill en `.claude/skills/` se carga sola.
+
+**Si cambias el kit o la skill:** edita `skill/SKILL.md` o los módulos, corre `python scripts/build_skill.py` para regenerar el .zip y la copia de Claude Code, y haz commit.
+
 ## Estructura
 
 | Ruta | Qué hace |
@@ -19,6 +33,10 @@ Solo usa la biblioteca estándar de Python 3.8 o superior. No hace falta instala
 | `dwm/check.py` | Verificaciones: ida y vuelta byte a byte, invariantes, geometría y redes sin driver. |
 | `examples/general_components.dwm` | Un componente de cada tipo de Digital Works. |
 | `tests/test_kit.py` | Pruebas de ejemplo. |
+| `skill/SKILL.md` | Fuente de la skill para Claude. |
+| `dist/digital-works-dwm.zip` | Skill lista para subir a claude.ai (incluye el kit). |
+| `.claude/skills/` | Copia de la skill que Claude Code carga solo. |
+| `scripts/build_skill.py` | Regenera el .zip y la copia de Claude Code. |
 
 ## Uso rápido
 
